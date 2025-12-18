@@ -1,0 +1,28 @@
+.navigation{
+  display: flex;
+  gap: 3vw;
+  font-weight: bold;
+  font-size: 22px;
+  justify-content: center;
+  a{
+    text-decoration: none;
+    color: black;
+    &:hover{
+      color: gray;
+    }
+  }
+}
+
+.logo{
+  height: 12vh;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  height: 15vh;
+  background-color: white;
+}

@@ -1,0 +1,75 @@
+.all-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5vw;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.product-card-primeng {
+    height: 38vh;
+    width: 17vw;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #969696;
+}
+
+.product-image-container {
+    height: 30vh;
+    width: 17vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-footer {
+    padding: 0 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8vh;
+}
+
+.product-name-footer {
+    font-size: 14px;
+    flex-grow: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 5px;
+}
+
+.product-price-footer {
+    font-size: 16px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+    .product-name-footer {
+        font-size: 1.2vw;
+    }
+
+    .product-price-footer {
+        font-size: 1.2vw;
+    }
+}
+
+:host ::ng-deep .p-card .p-card-body {
+    padding: 0 !important;
+}
+
+:host ::ng-deep .p-card-footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

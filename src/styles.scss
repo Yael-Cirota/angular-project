@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+// .p-image-preview {
+//     position: relative;
+// }
+// .p-image-toolbar {
+//     position: absolute !important;
+//     top: 0.75rem !important;
+//     right: 0.75rem !important;
+//     left: auto !important;
+//     bottom: auto !important;
+//     transform: none !important;
+// }
+
+/* PrimeNG Image – עיצוב overlay כמו באתר הרשמי */
+
+.p-image-toolbar {
+    width: auto !important;
+    top: 4rem !important;
+    left: 41.7% !important;
+    height: 3rem !important;
+    border-radius: 8px !important;
+    padding: 0.5rem !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.p-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+    margin: 0.5rem;
+}
+
+.p-image{
+    background-color: white;
+}

@@ -13,3 +13,16 @@
     "src/**/*.spec.ts"
   ]
 }
+
+// {
+//   "compilerOptions": {
+//     "baseUrl": "src", // optional, for absolute imports
+//     "moduleResolution": "node",
+//     "rootDir": "src",
+//     // ...
+//   },
+//   "include": [
+//     "src/**/*.ts",
+//     "src/**/*.d.ts"
+//   ]
+// }
