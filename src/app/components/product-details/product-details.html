@@ -1,14 +1,15 @@
+
 <div class="product">
     <div class="card flex justify-center">
-        <p-image src="{{product2.imageUrl}}" [preview]="true" alt="Image" width="350">
+        <p-image src="{{product.imageUrl}}" [preview]="true" alt="Image" width="350">
             <ng-template #indicator>
                 <i class="pi pi-search"></i>
             </ng-template>
             <ng-template #image>
-                <img src="{{product2.imageUrl}}" alt="image" width="250" />
+                <img src="{{product.imageUrl}}" alt="image" width="250" />
             </ng-template>
             <ng-template #preview let-style="style" let-previewCallback="previewCallback">
-                <img src="{{product2.imageUrl}}" alt="image" [style]="style" (click)="previewCallback()" width="350"
+                <img src="{{product.imageUrl}}" alt="image" [style]="style" (click)="previewCallback()" width="350"
                     style="background-color: white;" />
             </ng-template>
         </p-image>
