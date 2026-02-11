@@ -5,7 +5,7 @@ import { CardModule } from 'primeng/card';
 import { Product } from '../../models/product-model';
 import { ButtonModule } from 'primeng/button';
 import { ProductService } from '../../services/product-service';
-import { filter } from 'rxjs';
+// import { filter } from 'rxjs';
 import { Filters } from './filters/filters';
 
 @Component({

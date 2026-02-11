@@ -22,6 +22,7 @@ export class ProductDetails {
   productService = inject(ProductService);
 
   // product = input<Product>();
+  
   //בשביל הבדיקה כרגע:
   product: Product = this.productService.products[0];
 }

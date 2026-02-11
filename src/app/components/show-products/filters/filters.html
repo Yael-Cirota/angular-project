@@ -1,53 +1,24 @@
 <div class="filters">
-    <!-- <p-accordion [multiple]="true" [value]="['0', '1', '2']">
-        <p-accordion-panel value="0">
-            <p-accordion-header>Categories</p-accordion-header>
-
-            @for (category of categoriesService.categories; track $index){
-                <p-accordion-content>{{category.name}}</p-accordion-content>
-            }
-        </p-accordion-panel>
-
-
-        <p-accordion-panel value="1">
-            <p-accordion-header>מותג</p-accordion-header>
-            <p-accordion-content>
-            </p-accordion-content>
-        </p-accordion-panel>
-    </p-accordion> -->
     <div class="filter-container">
         <section>
-            <h3>SORT BY <span class="plus">+</span></h3>
+            <h3>SORT BY</h3>
             <div class="options-row">
                 <button class="chip active">New in</button>
                 <button class="chip">Priced from low to high</button>
+                <button class="chip">Priced from high to low</button>
             </div>
         </section>
-    
+
         <hr>
     
         <section>
-            <h3>COLOURS <span class="plus">+</span></h3>
+            <h3>Categories</h3>
             <div class="color-grid">
-                <div class="color-box pink"></div>
-                <div class="color-box blue"></div>
-                <div class="color-box brown"></div>
-                <div class="color-box cream"></div>
-                <div class="color-box red"></div>
-            </div>
-        </section>
-    
-        <hr>
-    
-        <section>
-            <h3>SIZES <span class="plus">+</span></h3>
-            <p>Clothing</p>
-            <div class="options-row">
-                <button class="size-box">01</button>
-                <button class="size-box">02</button>
-                <button class="size-box">04</button>
-                <button class="size-box">05</button>
-                <button class="size-box">XS</button>
+                @for (category of categoriesService.categories; track $index)
+                {
+                    <button class="color-chip", id="{{category.id}}">{{ category.name }}</button>
+                    <br>
+                }
             </div>
         </section>
     
