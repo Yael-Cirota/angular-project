@@ -22,14 +22,6 @@ export class CategoriesService {
       id: 3,
       name: "Bracelets"
     },
-    // {
-    //   id: 4,
-    //   name: "Silver Ring",
-    // },
-    // {
-    //   id: 5,
-    //   name: "Golden Necklace",
-    // }
   ];
 }
   

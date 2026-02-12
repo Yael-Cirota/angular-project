@@ -15,4 +15,5 @@ export interface Product {
     categoryName: string;
     description?: string; // סימן השאלה אומר שהשדה יכול להיות חסר (null/undefined)
     imageUrl: string;
+    quantity?: number; // שדה אופציונלי לכמות במלאי או בסל
 }

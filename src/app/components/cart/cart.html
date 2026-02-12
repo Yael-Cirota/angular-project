@@ -1,1 +1,40 @@
 <p>cart works!</p>
+
+<div class="card p-4">
+    <p-dataview [value]="products()">
+        <ng-template #list let-items>
+            <div class="flex flex-col">
+                <div *ngFor="let item of items; let first = first" class="p-4 border-surface-200"
+                    [ngClass]="{'border-t': !first}">
+                    <div class="flex flex-row items-center gap-4">
+                        <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + item.image"
+                            class="w-24 rounded" />
+
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl">{{item.name}}</h4>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <p-button icon="pi pi-minus" [rounded]="true" [text]="true"
+                                (click)="updateQuantity(item, -1)"></p-button>
+                            <span class="font-bold">{{item.quantity}}</span>
+                            <p-button icon="pi pi-plus" [rounded]="true" [text]="true"
+                                (click)="updateQuantity(item, 1)"></p-button>
+                        </div>
+
+                        <div class="text-right min-w-[100px]">
+                            <div class="text-xl font-bold">{{item.price * item.quantity}} ₪</div>
+                            <p-button icon="pi pi-trash" severity="danger" [text]="true"
+                                (click)="removeItem(item.id)"></p-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataview>
+
+    <div class="flex justify-between items-center mt-4 p-4 bg-surface-50 rounded-lg shadow">
+        <span class="text-2xl font-bold">TotalPrice: {{totalPrice()}} ₪</span>
+        <p-button label="ToPay" severity="success" icon="pi pi-shopping-bag"></p-button>
+    </div>
+</div>

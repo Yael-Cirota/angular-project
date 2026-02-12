@@ -17,7 +17,6 @@ import { Filters } from './filters/filters';
 
 export class ShowProducts {
 
-
   productService = inject(ProductService);
 
   // @Input() product!: Product;

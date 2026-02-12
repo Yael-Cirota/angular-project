@@ -27,40 +27,99 @@
 //   selectedAmazon: string[] = [];
 // }
 
-import { CategoriesService } from '../../../services/categories-service';
-import { Component, inject } from '@angular/core';
+// import { CategoriesService } from '../../../services/categories-service';
+// import { Component, inject } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+
+// @Component({
+//   selector: 'app-filters',
+//   standalone: true,
+//   imports: [CommonModule],
+//   templateUrl: './filters.html',
+//   styleUrl: './filters.scss'
+// })
+// export class Filters {
+
+//   categoriesService = inject(CategoriesService);
+//   maxPrice: number = 1000; // מחיר מקסימלי לדוגמה
+
+//   // כאן תוכל להוסיף משתנים לשמירת הבחירות של המשתמש
+//   selectedCategoryId?: number;
+//   selectedMinPrice?: number ;
+//   selectedMaxPrice?: number;
+
+//   onCategorySelect(categoryId: number) {
+//     this.selectedCategoryId = categoryId;
+//     // שלח אירוע לקומפוננטה האבא כדי לעדכן את רשימת המוצרים
+//   }
+
+//   onMinPriceSelect(price: number) {
+//     this.selectedMinPrice = price;
+//     // שלח אירוע לקומפוננטה האבא כדי לעדכן את רשימת המוצרים
+//   }
+
+//   onMaxPriceSelect(price: number) {
+//     this.selectedMaxPrice = price;
+//     // שלח אירוע לקומפוננטה האבא כדי לעדכן את רשימת המוצרים
+//   }
+// }
+
+
+// import { Component, inject, OnInit } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule } from '@angular/forms';
+// import { CheckboxModule } from 'primeng/checkbox';
+// import { CategoriesService } from '../../../services/categories-service';
+
+// @Component({
+//   selector: 'app-filters',
+//   standalone: true,
+//   imports: [CommonModule, FormsModule, CheckboxModule],
+//   templateUrl: './filters.html',
+//   styleUrls: ['./filters.scss']
+// })
+// export class Filters implements OnInit {
+
+//   categoriesService = inject(CategoriesService);
+
+//   categories = this.categoriesService.categories;
+
+//   selectedCategories: any[] = [];
+
+//   ngOnInit() {
+//     // אתחול עם Marketing מסומן כמו בתמונה
+//     this.selectedCategories = [this.categories[1]];
+//   }
+// }
+
+
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CheckboxModule } from 'primeng/checkbox';
+import { CategoriesService } from '../../../services/categories-service';
 
 @Component({
   selector: 'app-filters',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, CheckboxModule],
   templateUrl: './filters.html',
-  styleUrl: './filters.scss'
+  styleUrls: ['./filters.scss']
 })
-export class Filters {
-
+export class Filters implements OnInit {
+  
   categoriesService = inject(CategoriesService);
-  maxPrice: number = 1000; // מחיר מקסימלי לדוגמה
 
-  // כאן תוכל להוסיף משתנים לשמירת הבחירות של המשתמש
-  selectedCategoryId?: number;
-  selectedMinPrice?: number ;
-  selectedMaxPrice?: number;
+  // טעינת הקטגוריות מהשירות
+  categories = this.categoriesService.categories;
 
-  onCategorySelect(categoryId: number) {
-    this.selectedCategoryId = categoryId;
-    // שלח אירוע לקומפוננטה האבא כדי לעדכן את רשימת המוצרים
-  }
+  // מערך שיכיל את האובייקטים שנבחרו
+  selectedCategories: any[] = [];
 
-  onMinPriceSelect(price: number) {
-    this.selectedMinPrice = price;
-    // שלח אירוע לקומפוננטה האבא כדי לעדכן את רשימת המוצרים
-  }
-
-  onMaxPriceSelect(price: number) {
-    this.selectedMaxPrice = price;
-    // שלח אירוע לקומפוננטה האבא כדי לעדכן את רשימת המוצרים
+  ngOnInit() {
+    // אופציונלי: סימון קטגוריה כברירת מחדל
+    if (this.categories && this.categories.length > 1) {
+      this.selectedCategories = [this.categories[1]];
+    }
   }
 }
-
