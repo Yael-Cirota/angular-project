@@ -1,6 +1,5 @@
-<div class="row products-page-container">
-
-  <div class="all-products col-4">
+<div class="row products-page-container grid">
+  <div class="all-products col-10">
     @for (product of productService.products; track $index)
     {
     <p-card styleClass="product-card-primeng" (click)="goToDetails()">
@@ -20,7 +19,7 @@
     </p-card>
     }
   </div>
-  <div class="filters-container col-1">
+  <div class="filters-container col-2">
     <app-filters></app-filters>
   </div>
 </div>

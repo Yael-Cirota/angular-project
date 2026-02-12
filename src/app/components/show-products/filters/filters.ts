@@ -98,15 +98,19 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { CategoriesService } from '../../../services/categories-service';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputGroupModule } from 'primeng/inputgroup';
 
 @Component({
   selector: 'app-filters',
   standalone: true,
-  imports: [CommonModule, FormsModule, CheckboxModule],
+  imports: [CommonModule, FormsModule, CheckboxModule,InputTextModule,InputGroupModule],
   templateUrl: './filters.html',
   styleUrls: ['./filters.scss']
 })
 export class Filters implements OnInit {
+
+  search: string='';
   
   categoriesService = inject(CategoriesService);
 
